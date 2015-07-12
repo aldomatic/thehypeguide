@@ -88,7 +88,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 		<div class="product_thumbnail_wrapper <?php if ( !$product->is_in_stock() ) : ?>outofstock<?php endif; ?>">
 			
 			<div class="product_thumbnail <?php echo $class; ?>">
-				<a href="<?php the_permalink(); ?>">
+				<a href="<?php echo $product->add_to_cart_url(); ?>">
 					<span class="product_thumbnail_background" style="<?php echo $style; ?>"></span>
 					<?php
 						if ( has_post_thumbnail( $post->ID ) ) { 	
