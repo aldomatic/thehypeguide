@@ -8,4 +8,5 @@
 /* 
 	Modified Plugins 
 */
-/woocommerce
+/woocommerce (Version: 2.3.13)
+/yith-woocommerce-ajax-navigation (Version: 2.0.4)
