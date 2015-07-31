@@ -962,6 +962,19 @@
                 'type' => 'switch',
                 'default' => 1,
             ),
+
+            /*
+                 Title: Shareasale Create Links Options
+                 Date: 7/31/15
+                 Author: Aldo
+            */
+            array(
+                'id'       => 'shareasale-accountid',
+                'type'     => 'text',
+                'title'    => __('Text Option - Shareasale Acccount ID', 'shopkeeper'),,
+                'default'  => '234234234'
+            );
+            /* End Shareasale Create Links Options */
             
         )
         
