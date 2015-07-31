@@ -1,6 +1,4 @@
-<?php 
-
-
+<?php
 // add_filter( 'woocommerce_loop_add_to_cart_link', 'change_add_to_cart_loop' );
 // function change_add_to_cart_loop( $product ) {
 //     global $product;
@@ -14,7 +12,7 @@ add_action( 'admin_init', 'sas_settings_init' );
 
 function sas_add_admin_menu(  ) { 
 
-	add_options_page( 'shareasale create links', 'shareasale create links', 'manage_options', 'shareasale_create_links', 'shareasale_create_links_options_page' );
+	add_menu_page( 'Shareasale Links', 'Shareasale Links', 'manage_options', 'shareasale_links', 'shareasale_links_options_page' );
 
 }
 
@@ -86,7 +84,7 @@ function sas_options_page(  ) {
 	?>
 	<form action='options.php' method='post'>
 		
-		<h2>shareasale create links</h2>
+		<h2>Shareasale Links</h2>
 		
 		<?php
 		settings_fields( 'pluginPage' );
@@ -100,5 +98,10 @@ function sas_options_page(  ) {
 }
 
 ?>
+
+
+
+
+
 
 
