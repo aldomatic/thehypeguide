@@ -971,7 +971,7 @@
             array(
                 'id'       => 'shareasale-accountid',
                 'type'     => 'text',
-                'title'    => __('Text Option - Shareasale Acccount ID', 'shopkeeper'),
+                'title'    => __('Shareasale Acccount ID', 'shopkeeper'),
                 'default'  => '234234234'
             ),
             /* End Shareasale Create Links Options */
