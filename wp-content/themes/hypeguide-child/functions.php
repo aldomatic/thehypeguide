@@ -7,8 +7,4 @@
 //     return '<a href="'. esc_url( $product->get_permalink( $product->id ) ) . '">View Product</a>';
 // }
 
-
-
 ?>
-
-

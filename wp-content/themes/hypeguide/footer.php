@@ -323,7 +323,69 @@
     <!-- ******************************************************************** -->
 	
 	<?php wp_footer(); ?>
-    
+
+<!-- CJ AFFILIATE LINK ***************************************************** -->
+    <script src="//www.anrdoezrs.net/am/7353188/include/allCj/am.js"></script>
+
+<!-- GOOGLE ANALYTICS ***************************************************** -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46460425-1', 'auto');
+  ga('send', 'pageview');
+
+jQuery(function(){
+var externalAnchorEventTracker = [];
+jQuery("a.product_type_external, .single_add_to_cart_button").on("click", function(event){
+    externalAnchorEventTracker.push(event.type);
+    var outboundlink = jQuery(this).attr("href");
+    var linkContext = this;
+    window.ga('send', 'event', 'outbound', 'click', outboundlink, {'hitCallback':
+     function () {
+        jQuery(linkContext).click();
+	if (externalAnchorEventTracker.length == 1){
+		event.preventDefault();
+	} else {
+		externalAnchorEventTracker = [];
+	}
+     }
+   });
+});
+
+var productThumbnailEventTracker = [];
+jQuery(".product_thumbnail > a").on("click", function(event){
+    productThumbnailEventTracker.push(event.type);
+    var outboundlink = jQuery(this).attr("href");
+    var linkContext = this;
+    window.ga('send', 'event', 'outbound', 'image click', outboundlink, {'hitCallback':
+     function () {
+	jQuery(linkContext).click();
+	if (productThumbnailEventTracker.length == 1){
+		event.preventDefault();
+	} else {
+		productThumbnailEventTracker = [];
+	}
+	
+     }
+   });
+ });
+
+if (jQuery(".easyzoom").length ) {
+	if (jQuery(window).width() > 1024 ) {
+		// Nothing to do
+	} else {
+  setTimeout(function() {
+		jQuery(".easyzoom").prepend('<a href='+jQuery("a.social_media_pinterest").attr("href")+' target="_blank" style="display: inline-block;position: absolute;bottom: 10px;left: 10px;padding:0 10px;color: #CC1A1C;font-size: 50px;z-index:100;"><i class="fa fa-pinterest"></i></a>');
+},100)
+	}
+}
+
+});
+
+</script>
 </body>
 
 </html>

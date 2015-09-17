@@ -11,7 +11,8 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
+<meta name="p:domain_verify" content="4219b47d744e4f0f5a250269ed759bba"/>    
+<meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	
     <!-- ******************************************************************** -->

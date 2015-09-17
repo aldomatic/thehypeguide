@@ -16,6 +16,19 @@ Version: 1.0
 .yith-woo-ajax-navigation .yith-wcan-color > li:first-child{padding-top:0 !important;}
 #products-grid li img{opacity: 1 !important;}
 
+.page-title {
+	font-size: 3.125rem !important;
+	font-weight: 000 !important;
+}
+
+.woocommerce .products span.onsale, .woocommerce-page .products span.onsale, .woocommerce span.onsale, .woocommerce-page span.onsale {
+background-color: #00c96d; !important;
+}
+
+
+
+
+
 
 
 
