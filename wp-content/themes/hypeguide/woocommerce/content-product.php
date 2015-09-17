@@ -48,10 +48,10 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 ?>
 
 <li class="<?php if ( (isset($shopkeeper_theme_options['catalog_mode'])) && ($shopkeeper_theme_options['catalog_mode'] == 1) ) : ?>catalog_mode<?php endif; ?>">
-   
+
 	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
 
-	
+
 
 		<?php
 			$attachment_ids = $product->get_gallery_attachment_ids();
@@ -66,32 +66,35 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 				}
 			}
 		?>
-		
+
 		<?php do_action( 'woocommerce_before_shop_loop_item_title' ); ?>
-		
+
 		<?php
 
 		$style = '';
-		$class = '';        
-		if (isset($product_thumbnail_second[0])) {            
+		$class = '';
+		if (isset($product_thumbnail_second[0])) {
 			$style = 'background-image:url(' . $product_thumbnail_second[0] . ')';
-			$class = 'with_second_image';     
+			$class = 'with_second_image';
 		}
-		
+
 		if ( (isset($shopkeeper_theme_options['second_image_product_listing'])) && ($shopkeeper_theme_options['second_image_product_listing'] == "0" ) ) {
 			$style = '';
 			$class = '';
 		}
-		
+
 		?>
-		
+
 		<div class="product_thumbnail_wrapper <?php if ( !$product->is_in_stock() ) : ?>outofstock<?php endif; ?>">
-			
+
 			<div class="product_thumbnail <?php echo $class; ?>">
 				<a href="<?php echo $product->add_to_cart_url(); ?>">
+				<?php if (!wp_is_mobile()) { ?>
 					<span class="product_thumbnail_background" style="<?php echo $style; ?>"></span>
+				<?php	} ?>
+
 					<?php
-						if ( has_post_thumbnail( $post->ID ) ) { 	
+						if ( has_post_thumbnail( $post->ID ) ) {
 							echo  get_the_post_thumbnail( $post->ID, 'shop_catalog');
 						}else{
 							 echo apply_filters( 'woocommerce_single_product_image_html', sprintf( '<img src="%s" alt="Placeholder" />', wc_placeholder_img_src() ), $post->ID );
@@ -99,47 +102,47 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 					?>
 				</a>
 			</div><!--.product_thumbnail-->
-			
+
 			<?php if ( (isset($shopkeeper_theme_options['catalog_mode'])) && ($shopkeeper_theme_options['catalog_mode'] == 0) ) : ?>
 				<?php wc_get_template( 'loop/sale-flash.php' ); ?>
             <?php endif; ?>
-			
+
 			<?php if ( (isset($shopkeeper_theme_options['catalog_mode'])) && ($shopkeeper_theme_options['catalog_mode'] == 0) ) : ?>
-				<?php if ( !$product->is_in_stock() ) : ?>            
-                    <div class="out_of_stock_badge_loop"><?php _e( 'Out of stock', 'woocommerce' ); ?></div>            
+				<?php if ( !$product->is_in_stock() ) : ?>
+                    <div class="out_of_stock_badge_loop"><?php _e( 'Out of stock', 'woocommerce' ); ?></div>
                 <?php endif; ?>
             <?php endif; ?>
-			
+
 			<?php if (class_exists('YITH_WCWL')) : ?>
 			<?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?>
             <?php endif; ?>
-			
+
 		</div><!--.product_thumbnail_wrapper-->
-				
+
 		<h3><a class="product-title-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-		
+
         <?php if ( (isset($shopkeeper_theme_options['ratings_catalog_page'])) && ($shopkeeper_theme_options['ratings_catalog_page'] == "1" ) ) : ?>
         <div class="archive-product-rating">
 			<?php do_action( 'woocommerce_after_shop_loop_item_title_loop_rating' ); ?>
 		</div>
         <?php endif; ?>
-	
+
 	<div class="product_after_shop_loop">
-		
+
 		<?php do_action( 'woocommerce_after_shop_loop_item_title' ); ?>
-		
+
 		<div class="product_after_shop_loop_switcher">
-			
+
 			<div class="product_after_shop_loop_price">
 				<?php do_action( 'woocommerce_after_shop_loop_item_title_loop_price' ); ?>
 			</div>
-			
+
 			<div class="product_after_shop_loop_buttons">
 				<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
 			</div>
-			
+
 		</div>
-		
+
 	</div>
-	
+
 </li>
