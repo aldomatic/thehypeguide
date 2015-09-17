@@ -14,7 +14,7 @@ Version: 1.0
 /*************** ADD YOUR CUSTOM CSS IN THIS AREA ***************/
 /****************************************************************/
 .yith-woo-ajax-navigation .yith-wcan-color > li:first-child{padding-top:0 !important;}
-#products-grid li img{opacity: 1 !important;}
+/*#products-grid li img{opacity: 1 !important;}*/
 
 .page-title {
 	font-size: 3.125rem !important;
